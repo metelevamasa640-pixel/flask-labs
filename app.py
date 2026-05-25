@@ -57,37 +57,37 @@ def index():
         {
             "title" : "Лабораторная №5.1",
             "description" : "Вывод текста и изменение цвета шрифта",
-            "file" : "lab_5_1.php"
+            "file" : "lab_5_1.html"
         },
         {
             "title" : "Лабораторная №5.2",
             "description" : "Использование переменных и вывод их на экран",
-            "file" : "lab_5_2.php"
+            "file" : "lab_5_2.html"
         },
         {
             "title" : "Лабораторная №5.3",
             "description" : "Использование ссылок на переменные",
-            "file" : "lab_5_3.php"
+            "file" : "lab_5_3.html"
         },
         {
             "title" : "Лабораторная №5.4",
             "description" : "Типы переменных",
-            "file" : "lab_5_4.php"
+            "file" : "lab_5_4.html"
         },
         {
             "title" : "Лабораторная №5.5",
             "description" : "Условия if / elseif",
-            "file" : "lab_5_5.php"
+            "file" : "lab_5_5.html"
         },
         {
             "title" : "Лабораторная №5.6",
             "description" : "Оператор switch",
-            "file" : "lab_5_6.php"
+            "file" : "lab_5_6.html"
         },
         {
             "title" : "Лабораторная №5.7",
             "description" : "Switch и сообщения на разных языках",
-            "file" : "lab_5_7.php"
+            "file" : "lab_5_7.html"
         },
     ]
 
@@ -95,22 +95,22 @@ def index():
         {
             "title" : "Лабораторная №6.1",
             "description" : "Циклы for и таблица умножения",
-            "file" : "lab_6_1.php"
+            "file" : "lab_6_1.html"
         },
         {
             "title" : "Лабораторная №6.2",
             "description" : "Циклы for и таблица сложения",
-            "file" : "lab_6_2.php"
+            "file" : "lab_6_2.html"
         },
         {
             "title" : "Лабораторная №6.3",
             "description" : "Функции для вывода текста",
-            "file" : "lab_6_3.php"
+            "file" : "lab_6_3.html"
         },
         {
             "title" : "Лабораторная №6.4",
             "description" : "Массивы, цвет и размер текста",
-            "file" : "lab_6_4.php"
+            "file" : "lab_6_4.html"
         },
     ]
 
@@ -118,12 +118,12 @@ def index():
         {
             "title" : "Лабораторная №7.1",
             "description" : "Массивы, foreach, сортировка",
-            "file" : "lab_7_1.php"
+            "file" : "lab_7_1.html"
         },
         {
             "title" : "Лабораторная №7.5",
             "description" : "Ассоциативные массивы",
-            "file" : "lab_7_5.php"
+            "file" : "lab_7_5.html"
         },
 
     ]
