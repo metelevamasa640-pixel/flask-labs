@@ -19,7 +19,7 @@ def index():
         {
             "title" : "Лабораторная №2",
             "description" : "Список предметов и факультетов",
-            "file" : "web2_.html"
+            "file" : "Web2_.html"
         },
         {
             "title" : "Лабораторная №3",
