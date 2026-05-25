@@ -5,8 +5,6 @@ from pathlib import Path #существует ли файл на компьют
 app = Flask(__name__)
 
 FLASK_LABS_DIR = Path(app.static_folder) / "labs"
-XAMPP_LABS_DIR = Path(r"C:\xampp\htdocs\php_labs")
-XAMPP_URL = "http://localhost/php_labs"
 
 @app.route("/")
 def index():
@@ -133,36 +131,27 @@ def index():
     sections = [
         {
             "heading": "Лабораторные работы по HTML",
-            "labs": labhtml,
-            "type": "html"
+            "labs": labhtml
         },
         {
             "heading": "Лабораторные работы по PHP №5",
-            "labs": lab5,
-            "type": "php"
+            "labs": lab5
         },
         {
             "heading": "Лабораторные работы по PHP №6",
-            "labs": lab6,
-            "type": "php"
+            "labs": lab6
         },
         {
             "heading": "Лабораторные работы по PHP №7",
-            "labs": lab7,
-            "type": "php"
+            "labs": lab7
         },
     ]
 
     for section in sections:
         for lab in section["labs"]:
-            if section["type"] == "html":
-                file_path = FLASK_LABS_DIR / lab["file"]
-                lab["exists"] = file_path.exists()
-                lab["url"] = url_for("static", filename=f"labs/{lab['file']}")
-            else:
-                file_path = XAMPP_LABS_DIR / lab["file"]
-                lab["exists"] = file_path.exists()
-                lab["url"] = f"{XAMPP_URL}/{lab['file']}"
+            file_path = FLASK_LABS_DIR / lab["file"]
+            lab["exists"] = file_path.exists()
+            lab["url"] = url_for("static", filename=f"labs/{lab['file']}")
 
     return render_template("index.html", title=title, sections=sections)
 
