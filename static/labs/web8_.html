@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбирайте элемент</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: white;
+            font-family: "Times New Roman", serif;
+        }
+
+        #app {
+            width: 976px;
+            height: 512px;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            display: grid;
+        }
+
+        .screen-first {
+            grid-template-columns: 70% 30%;
+        }
+
+        .screen-second {
+            grid-template-columns: 29.5% 40.5% 30%;
+        }
+
+        .block {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .form-block {
+            background: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .image-block {
+            background: #cccccc;
+        }
+
+        .image-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        h1 {
+            color: magenta;
+            font-size: 42px;
+            line-height: 1.25;
+            margin: 0 0 70px;
+        }
+
+        label {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        select {
+            margin: 25px 0;
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 3px 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+    const imageFile = "mozaika.webp";
+
+    function createForm(pictureNumber, frameNumber) {
+        return `
+            <div>
+                <h1>Выбирайте<br>элемент</h1>
+
+                <form onsubmit="sendForm(event)">
+                    <label>Номер картинки</label><br>
+                    <select name="picture">
+                        <option value="1" ${pictureNumber == 1 ? "selected" : ""}>1</option>
+                        <option value="2" ${pictureNumber == 2 ? "selected" : ""}>2</option>
+                        <option value="3" ${pictureNumber == 3 ? "selected" : ""}>3</option>
+                        <option value="4" ${pictureNumber == 4 ? "selected" : ""}>4</option>
+                    </select>
+
+                    <br>
+
+                    <label>Номер фрейма</label><br>
+                    <select name="frame">
+                        <option value="1" ${frameNumber == 1 ? "selected" : ""}>1</option>
+                        <option value="4" ${frameNumber == 4 ? "selected" : ""}>4</option>
+                    </select>
+
+                    <br>
+
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        `;
+    }
+
+    function imageBlock() {
+        return `
+            <div class="block image-block">
+                <img src="${imageFile}" alt="Картинка">
+            </div>
+        `;
+    }
+
+    function formBlock(pictureNumber, frameNumber) {
+        return `
+            <div class="block form-block">
+                ${createForm(pictureNumber, frameNumber)}
+            </div>
+        `;
+    }
+
+    function showFirstScreen() {
+        document.getElementById("app").innerHTML = `
+            <div class="screen screen-first">
+                ${formBlock(1, 1)}
+                ${imageBlock()}
+            </div>
+        `;
+    }
+
+    function showSecondScreen(pictureNumber, frameNumber) {
+        document.getElementById("app").innerHTML = `
+            <div class="screen screen-second">
+                ${imageBlock()}
+                ${formBlock(pictureNumber, frameNumber)}
+                ${imageBlock()}
+            </div>
+        `;
+    }
+
+    function sendForm(event) {
+        event.preventDefault();
+
+        const pictureNumber = event.target.picture.value;
+        const frameNumber = event.target.frame.value;
+
+        if (frameNumber === "4") {
+            showSecondScreen(pictureNumber, frameNumber);
+        } else {
+            showFirstScreen();
+        }
+    }
+
+    showFirstScreen();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+body
+{
+    background-color: #f2f5f9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    margin: 0;
+}
+
+header
+{
+    background: linear-gradient(135deg, rgb(72, 50, 93), rgb(93, 32, 151), rgb(148, 41, 201)) ;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1
+{
+    margin: 0;
+    font-size: 42px;
+}
+
+header h1::after
+{
+    content: "";
+    display: block;
+    width: 450px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, rgb(255, 255, 255, 0.9), transparent);
+    margin: 18px auto 0;
+    border-radius: 999px;
+}
+
+header p
+{
+    font-size: 18px;
+    margin-bottom: 0; 
+}
+
+main
+{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px; /*чтобы текст не прилипал к краям*/
+}
+
+.card
+{
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px; /*скругление углов*/
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.08);
+}
+
+ul
+{
+    list-style: none;
+    padding: 0;
+    display: grid; /*разложить элементы внутри этого блока как сетку*/
+    grid-template-columns: repeat(3, 1fr); /*повтори 3 раза колонку размером 1 часть*/
+    gap: 20px; /*расстояние между карточками*/
+}
+
+.button
+{
+    display: inline-block;
+    background: darkorchid;
+    color: #ffff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.button:hover
+{
+    background: rgb(108, 32, 179);
+}
+
+.card h3
+{
+    margin-top: 0;
+    font-size: 22px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /*Плавный переход при движении за 0.2 секунды*/
+}
+
+.card p
+{
+    color: #555;
+    line-height: 1.5;
+}
+
+.card p.error
+{
+    color:rgb(180, 1, 1);
+    font-weight: bold;
+}
+.card:hover
+{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgb(0, 0, 0, 0.12);
+}
+
+h2
+{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+@media (max-width: 700px) {
+    ul 
+    {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 
+    {
+        font-size: 32px;
+    }
+}
+

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Мой Flask-сайт</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <header id="top">
+            <h1>{{ title }}</h1>
+            <p>Сайт для лабораторных работ по WEB-технологиям</p>
+        </header>
+        <main>
+            {% for section in sections %}
+                <h2>{{ section.heading }}</h2>
+                <ul>
+                    
+                    {% for lab in section.labs %}
+                        <li class="card">
+                            <h3>{{ lab.title }}</h3>
+                            <p>{{ lab.description }}</p>
+                            {% if lab.exists %}
+                                <a class="button" href="{{ lab.url }}" target="_blank" rel="noopener noreferrer">Открыть</a>
+                            {% else %}
+                                <p class="error">Файл не найден</p>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>     
+            {% endfor %}
+        </main>
+        <footer>
+            <a class="top-link" href="#top">Наверх</a>
+            <p>Метелева Мария ● ИИ-451</p>
+        </footer>
+    </body>
+</html>
